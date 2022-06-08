@@ -7,9 +7,14 @@ import { User } from './_models/user';
 })
 export class LoginService {
 baseurl:string = "https://localhost:7076/api/Login"
-  login(u:User)
-  {
-    return this.http.post<string>(this.baseurl,{params:{username: u.username, password: u.password, role: u.role}})
+
+login(u:User)
+{
+    const params = new HttpParams()
+      .set('username', u.username)
+      .set('password', u.password)
+      .set('role', u.role);
+    return this.http.post<string>(this.baseurl,{params})
   }
 
   getToken()
