@@ -1,0 +1,11 @@
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <input type="text"[(ngModel)]="u.username" placeholder="username"/>
+      <input type="password"[(ngModel)]="u.password" placeholder="password"/>
+      <input type="text"[(ngModel)]="u.role" placeholder="role"/>
+      <button (click)="Login()">login</button>
+      <p class="message">Enter as a guest? <a href="#">Anonymous</a></p>
+    </form>
+  </div>
+</div>
